@@ -42,3 +42,6 @@ Thumbs.db
 
 # TypeScript
 *.tsbuildinfo
+
+# Sensitive seed data (contains password hashes / PII)
+backend/src/data/users.json
