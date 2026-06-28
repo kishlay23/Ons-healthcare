@@ -1,0 +1,74 @@
+[
+  {
+    "id": "s1",
+    "name": "Rajesh Kumar",
+    "condition": "Knee ACL Tear",
+    "specialty": "Sports",
+    "story_text": "After tearing my ACL during a football match, I was told I'd never play again. The team at ONS Healthcare proved everyone wrong. After 8 weeks of dedicated physiotherapy and their specialized ACL rehabilitation program, I was back on the field stronger than ever. The progressive exercise plan and constant encouragement from my therapist made all the difference.",
+    "rating": 5,
+    "status": "published",
+    "featured": true,
+    "photo_url": null,
+    "created_at": "2024-03-15"
+  },
+  {
+    "id": "s2",
+    "name": "Priya Sharma",
+    "condition": "Cervical Spondylosis",
+    "specialty": "Ortho",
+    "story_text": "I suffered from chronic neck pain for over 3 years that was affecting my work and sleep. After trying multiple treatments elsewhere with no results, a friend recommended ONS Healthcare. The personalized treatment plan combining manual therapy, traction and postural correction helped me get rid of the pain completely in just 6 weeks. I now sleep soundly and work without any discomfort. Highly recommended!",
+    "rating": 5,
+    "status": "published",
+    "featured": true,
+    "photo_url": null,
+    "created_at": "2024-02-20"
+  },
+  {
+    "id": "s3",
+    "name": "Amit Patel",
+    "condition": "Stroke Rehabilitation",
+    "specialty": "Neuro",
+    "story_text": "After my stroke, I lost movement on my left side and couldn't do basic tasks. The neurological therapy team at ONS Healthcare designed a comprehensive rehabilitation program that helped me regain mobility and independence over 3 months. The patience, expertise and genuine care shown by every therapist was truly life-changing. I can now walk without assistance and have returned to most of my daily activities.",
+    "rating": 5,
+    "status": "published",
+    "featured": true,
+    "photo_url": null,
+    "created_at": "2024-01-10"
+  },
+  {
+    "id": "s4",
+    "name": "Sunita Reddy",
+    "condition": "Frozen Shoulder",
+    "specialty": "Ortho",
+    "story_text": "I had a frozen shoulder that made it impossible to raise my arm above my head for over a year. After just 12 sessions of manual therapy and electrotherapy at ONS, my full range of motion was restored. The therapists were extremely knowledgeable and explained every step of the treatment. I'm back to doing yoga and swimming without any pain.",
+    "rating": 5,
+    "status": "published",
+    "featured": false,
+    "photo_url": null,
+    "created_at": "2024-04-05"
+  },
+  {
+    "id": "s5",
+    "name": "Vikram Singh",
+    "condition": "Disc Herniation",
+    "specialty": "Ortho",
+    "story_text": "A severe L4-L5 disc herniation had me bedridden for weeks. My doctor recommended surgery, but I wanted to try physiotherapy first. ONS Healthcare's structured rehabilitation program using traction therapy and core strengthening exercises gave me my life back without surgery. After 4 weeks of treatment, I was back to work and pain-free.",
+    "rating": 5,
+    "status": "published",
+    "featured": false,
+    "photo_url": null,
+    "created_at": "2024-03-28"
+  },
+  {
+    "id": "s6",
+    "name": "Meera Nair",
+    "condition": "Parkinson's Disease",
+    "specialty": "Neuro",
+    "story_text": "Managing Parkinson's is a daily challenge, but the specialized therapy at ONS has significantly improved my quality of life. The LSVT BIG program helped me move more confidently, my handwriting improved, and I have fewer falls. The therapists truly understand neurological conditions and tailor every session to my specific needs.",
+    "rating": 4,
+    "status": "published",
+    "featured": false,
+    "photo_url": null,
+    "created_at": "2024-02-14"
+  }
+]

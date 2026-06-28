@@ -1,0 +1,22 @@
+:root {
+  --primary-red: #CC0000;
+  --primary-green: #2E6B2E;
+  --dark-blue: #1A3C5E;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --bg-light: #f9f9f9;
+  --border-light: #e0e0e0;
+
+  /* Tailwind-compatible aliases */
+  --color-primary-50: #fff5f5;
+  --color-primary-100: #ffe0e0;
+  --color-primary-500: #CC0000;
+  --color-primary-600: #b30000;
+  --color-primary-700: #990000;
+  --color-success-500: #2E6B2E;
+  --color-success-600: #245a24;
+  --color-dark-50: #f9f9f9;
+  --color-dark-100: #f0f0f0;
+  --color-dark-500: #333333;
+  --color-dark-600: #1a1a1a;
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "admin1",
+    "email": "admin@onshealthcare.in",
+    "password_hash": "$2a$10$Wz3DtAW.aF1y4VUjFmKcP./ctzkIKibkw86P.c3kmzBgbJPkPbTE6",
+    "firstName": "Admin",
+    "lastName": "ONS",
+    "phone": "9999999999",
+    "age": 35,
+    "gender": "male",
+    "role": "admin",
+    "createdAt": "2024-01-01"
+  }
+]

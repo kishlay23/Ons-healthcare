@@ -1,0 +1,134 @@
+[
+  {
+    "id": "t1",
+    "name": "Manual Therapy",
+    "description": "Hands-on techniques to mobilize joints and soft tissues, reducing pain and improving range of motion for musculoskeletal conditions.",
+    "specialty": "Ortho",
+    "duration_minutes": 45,
+    "standard_sessions": 10,
+    "price_per_session": 800,
+    "benefits": ["Pain relief", "Improved mobility", "Reduced stiffness"],
+    "conditions": ["Lower back pain", "Neck pain", "Frozen shoulder"]
+  },
+  {
+    "id": "t2",
+    "name": "Electrotherapy (TENS/IFT)",
+    "description": "Electrical stimulation therapy using TENS and Interferential Therapy to reduce pain, improve circulation and accelerate tissue healing.",
+    "specialty": "Ortho",
+    "duration_minutes": 30,
+    "standard_sessions": 15,
+    "price_per_session": 600,
+    "benefits": ["Pain reduction", "Muscle relaxation", "Faster healing"],
+    "conditions": ["Arthritis", "Sports injuries", "Post-surgery recovery"]
+  },
+  {
+    "id": "t3",
+    "name": "Ultrasound Therapy",
+    "description": "Deep tissue ultrasound waves to promote healing of tendons, ligaments and muscles by increasing blood flow and reducing inflammation.",
+    "specialty": "Ortho",
+    "duration_minutes": 20,
+    "standard_sessions": 12,
+    "price_per_session": 500,
+    "benefits": ["Tissue repair", "Inflammation reduction", "Scar tissue breakdown"],
+    "conditions": ["Tendonitis", "Ligament sprains", "Muscle tears"]
+  },
+  {
+    "id": "t4",
+    "name": "Stroke Rehabilitation",
+    "description": "Comprehensive neurological rehabilitation for stroke survivors to regain motor control, balance, coordination and independence.",
+    "specialty": "Neuro",
+    "duration_minutes": 60,
+    "standard_sessions": 30,
+    "price_per_session": 1200,
+    "benefits": ["Motor function recovery", "Balance improvement", "Independence restoration"],
+    "conditions": ["Stroke", "Hemiplegia", "Gait disorders"]
+  },
+  {
+    "id": "t5",
+    "name": "Parkinson's Therapy",
+    "description": "Specialized physiotherapy to improve gait, balance, and motor function in patients with Parkinson's disease using LSVT BIG techniques.",
+    "specialty": "Neuro",
+    "duration_minutes": 60,
+    "standard_sessions": 20,
+    "price_per_session": 1100,
+    "benefits": ["Improved gait", "Better balance", "Reduced tremors"],
+    "conditions": ["Parkinson's disease", "Movement disorders", "Bradykinesia"]
+  },
+  {
+    "id": "t6",
+    "name": "Spinal Cord Injury Rehab",
+    "description": "Intensive rehabilitation program for spinal cord injury patients focusing on maximizing functional independence and quality of life.",
+    "specialty": "Neuro",
+    "duration_minutes": 90,
+    "standard_sessions": 40,
+    "price_per_session": 1500,
+    "benefits": ["Functional recovery", "Strength building", "Independence"],
+    "conditions": ["Spinal cord injury", "Paraplegia", "Quadriplegia"]
+  },
+  {
+    "id": "t7",
+    "name": "Sports Injury Recovery",
+    "description": "Targeted physiotherapy for athletes recovering from acute and chronic sports injuries, designed to restore full performance capacity.",
+    "specialty": "Sports",
+    "duration_minutes": 60,
+    "standard_sessions": 12,
+    "price_per_session": 1000,
+    "benefits": ["Full performance restoration", "Injury prevention", "Strength conditioning"],
+    "conditions": ["ACL tear", "Hamstring strain", "Rotator cuff injury"]
+  },
+  {
+    "id": "t8",
+    "name": "ACL Rehabilitation",
+    "description": "Progressive 6-phase ACL rehabilitation protocol from post-surgery to return-to-sport, including strength, proprioception and agility training.",
+    "specialty": "Sports",
+    "duration_minutes": 75,
+    "standard_sessions": 24,
+    "price_per_session": 1100,
+    "benefits": ["Knee stability", "Strength restoration", "Safe return to sport"],
+    "conditions": ["ACL rupture", "Post-ACL surgery", "Knee instability"]
+  },
+  {
+    "id": "t9",
+    "name": "Dry Needling",
+    "description": "Intramuscular stimulation technique targeting myofascial trigger points to relieve chronic muscle pain and improve function.",
+    "specialty": "Ortho",
+    "duration_minutes": 30,
+    "standard_sessions": 8,
+    "price_per_session": 900,
+    "benefits": ["Trigger point release", "Muscle relaxation", "Pain relief"],
+    "conditions": ["Chronic muscle pain", "Fibromyalgia", "Tension headaches"]
+  },
+  {
+    "id": "t10",
+    "name": "Kinesio Taping",
+    "description": "Application of elastic therapeutic tape to support muscles and joints, reduce swelling and improve proprioception during recovery.",
+    "specialty": "Sports",
+    "duration_minutes": 20,
+    "standard_sessions": 6,
+    "price_per_session": 400,
+    "benefits": ["Joint support", "Swelling reduction", "Improved proprioception"],
+    "conditions": ["Ankle sprains", "Knee pain", "Shoulder instability"]
+  },
+  {
+    "id": "t11",
+    "name": "Posture Correction",
+    "description": "Systematic assessment and correction of postural imbalances causing chronic pain through targeted exercises and ergonomic education.",
+    "specialty": "Ortho",
+    "duration_minutes": 45,
+    "standard_sessions": 10,
+    "price_per_session": 700,
+    "benefits": ["Pain reduction", "Better alignment", "Improved confidence"],
+    "conditions": ["Scoliosis", "Kyphosis", "Forward head posture"]
+  },
+  {
+    "id": "t12",
+    "name": "Balance & Vestibular Therapy",
+    "description": "Specialized exercises for vertigo, dizziness and balance disorders using vestibular rehabilitation techniques.",
+    "specialty": "Neuro",
+    "duration_minutes": 45,
+    "standard_sessions": 10,
+    "price_per_session": 950,
+    "benefits": ["Vertigo relief", "Balance restoration", "Fall prevention"],
+    "conditions": ["BPPV", "Vertigo", "Balance disorders"]
+  }
+]

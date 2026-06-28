@@ -1,0 +1,82 @@
+[
+  {
+    "id": "m1",
+    "name": "Ultrasound Therapy Unit",
+    "brand": "Chattanooga",
+    "model": "Intelect Mobile 2",
+    "description": "Advanced therapeutic ultrasound machine for deep tissue heating, promoting healing of muscles, tendons, and ligaments through acoustic energy.",
+    "specialty": "Ortho",
+    "certifications": ["CE Certified", "FDA Approved"],
+    "acquired_date": "2022-01-15"
+  },
+  {
+    "id": "m2",
+    "name": "TENS / IFT Machine",
+    "brand": "Electrotherapy India",
+    "model": "ET-4000",
+    "description": "Dual-channel interferential and TENS therapy unit for pain management, muscle stimulation and edema reduction.",
+    "specialty": "Ortho",
+    "certifications": ["ISO 13485", "CE Certified"],
+    "acquired_date": "2021-06-20"
+  },
+  {
+    "id": "m3",
+    "name": "Traction Table",
+    "brand": "Chattanooga",
+    "model": "Triton DTS",
+    "description": "Motorized spinal decompression table for cervical and lumbar traction therapy, relieving disc compression and nerve root pain.",
+    "specialty": "Ortho",
+    "certifications": ["FDA Cleared", "CE Mark"],
+    "acquired_date": "2021-03-10"
+  },
+  {
+    "id": "m4",
+    "name": "Laser Therapy Device",
+    "brand": "Erchonia",
+    "model": "FX 635",
+    "description": "Low-level laser therapy device that accelerates tissue repair, reduces inflammation and relieves chronic pain at the cellular level.",
+    "specialty": "Sports",
+    "certifications": ["FDA Cleared", "Class II Medical Device"],
+    "acquired_date": "2023-02-28"
+  },
+  {
+    "id": "m5",
+    "name": "Gait Training Treadmill",
+    "brand": "h/p/cosmos",
+    "model": "Mercury",
+    "description": "Specialized medical treadmill with body weight support system for neurological gait rehabilitation and balance training.",
+    "specialty": "Neuro",
+    "certifications": ["Medical CE", "TÜV Certified"],
+    "acquired_date": "2022-08-05"
+  },
+  {
+    "id": "m6",
+    "name": "Shockwave Therapy Machine",
+    "brand": "Storz Medical",
+    "model": "Masterpuls MP50",
+    "description": "Radial shockwave therapy for chronic tendinopathies, calcifications and myofascial pain syndromes.",
+    "specialty": "Sports",
+    "certifications": ["CE Certified", "ISO 13485"],
+    "acquired_date": "2023-05-12"
+  },
+  {
+    "id": "m7",
+    "name": "Functional Electrical Stimulation",
+    "brand": "Bioness",
+    "model": "L300 Go",
+    "description": "Wearable FES device for foot drop correction in neurological patients, stimulating the peroneal nerve during walking.",
+    "specialty": "Neuro",
+    "certifications": ["FDA Cleared", "CE Mark"],
+    "acquired_date": "2022-11-18"
+  },
+  {
+    "id": "m8",
+    "name": "Hydrotherapy Pool",
+    "brand": "Endless Pools",
+    "model": "Fitness Pro",
+    "description": "Heated therapeutic pool for aquatic physiotherapy, reducing joint load while enabling effective rehabilitation exercises.",
+    "specialty": "Ortho",
+    "certifications": ["Pool Safety Certified"],
+    "acquired_date": "2020-09-01"
+  }
+]
