@@ -1,24 +1,40 @@
-import express from 'express'
-import cors from 'cors'
-import { errorHandler } from './middleware/errorHandler'
-import { requestLogger } from './middleware/logging'
-import routes from './routes'
+import express from "express";
+import helmet from "helmet";
+import cors from "cors";
+import { errorHandler } from "./middleware/errorHandler";
+import { requestLogger } from "./middleware/logging";
+import routes from "./routes";
 
-const app = express()
+const app = express();
 
-app.use(cors({
-  origin: ['http://localhost:3000', 'http://172.30.176.1:3000', '*'],
-  credentials: true,
-}))
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-app.use(requestLogger)
+// Security headers — must be first middleware
+app.use(helmet());
 
-app.get('/health', (_req, res) => res.json({ status: 'OK', db: 'SQLite', time: new Date().toISOString() }))
+const allowedOrigins = process.env.CORS_ORIGIN
+  ? process.env.CORS_ORIGIN.split(",").map((o) => o.trim())
+  : ["http://localhost:3000", "http://localhost:3001"];
 
-app.use('/api', routes)
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) return callback(null, true);
+      callback(new Error("Not allowed by CORS"));
+    },
+    credentials: true,
+  }),
+);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(requestLogger);
 
-app.use((_req, res) => res.status(404).json({ message: 'Route not found' }))
-app.use(errorHandler)
+app.get("/health", (_req, res) =>
+  res.json({ status: "OK", db: "SQLite", time: new Date().toISOString() }),
+);
 
-export default app
+app.use("/api", routes);
+
+app.use((_req, res) => res.status(404).json({ message: "Route not found" }));
+app.use(errorHandler);
+
+export default app;

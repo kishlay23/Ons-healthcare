@@ -11,8 +11,8 @@ export default function AboutPage() {
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Who We Are</h2>
           <p className="text-gray-600 leading-relaxed">
-            ONS Healthcare is a leading physiotherapy clinic in Hyderabad, Telangana, specializing in
-            orthopedic, neurological, and sports injury rehabilitation. With over 15 years of experience,
+            ONS Healthcare is a leading physiotherapy clinic in Katihar, Bihar, specializing in
+            orthopedic, neurological, and sports injury rehabilitation. With over 5+ years of experience,
             our expert team helps patients reclaim their mobility and quality of life.
           </p>
         </section>
@@ -25,9 +25,9 @@ export default function AboutPage() {
         </section>
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {[
-            { icon: '🏆', title: '15+ Years', desc: 'Of clinical excellence' },
+            { icon: '🏆', title: '5+ Years', desc: 'Of clinical excellence' },
             { icon: '👨‍⚕️', title: 'Expert Team', desc: 'Certified physiotherapists' },
-            { icon: '❤️', title: '500+ Patients', desc: 'Successfully treated' },
+            { icon: '❤️', title: '100+ Patients', desc: 'Successfully treated' },
           ].map((card) => (
             <div key={card.title} className="text-center p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
               <div className="text-4xl mb-3">{card.icon}</div>

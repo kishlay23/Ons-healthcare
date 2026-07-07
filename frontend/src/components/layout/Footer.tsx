@@ -56,19 +56,19 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex gap-2">
                 <span className="text-red-400">📞</span>
-                <a href="tel:+919999999999" className="hover:text-white transition-colors">
-                  +91-9999-999-999
+                <a href="tel:+918218071095" className="hover:text-white transition-colors">
+                  +91-8218071095
                 </a>
               </li>
               <li className="flex gap-2">
                 <span className="text-red-400">✉️</span>
-                <a href="mailto:info@onshealthcare.in" className="hover:text-white transition-colors">
-                  info@onshealthcare.in
+                <a href="mailto:info@onshealthcare.com" className="hover:text-white transition-colors">
+                  info@onshealthcare.com
                 </a>
               </li>
               <li className="flex gap-2">
                 <span className="text-red-400">📍</span>
-                <span>Hyderabad, Telangana, India</span>
+                <span>Hardyal road near kali mandir, Katihar, Bihar, India</span>
               </li>
             </ul>
           </div>

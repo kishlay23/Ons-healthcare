@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 // ── Users ────────────────────────────────────────────────────────────────────
@@ -23,11 +23,26 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  appointments Appointment[]
-  stories      PatientStory[]
-  therapist    Therapist?
+  appointments   Appointment[]
+  stories        PatientStory[]
+  therapist      Therapist?
+  passwordResets PasswordReset[]
 
   @@map("users")
+}
+
+// ── Password Resets ───────────────────────────────────────────────────────────
+
+model PasswordReset {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tokenHash String   @unique  // SHA-256 of the raw token (never stored plain)
+  expiresAt DateTime
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@map("password_resets")
 }
 
 // ── Therapists ────────────────────────────────────────────────────────────────
@@ -81,8 +96,8 @@ model Treatment {
   specialty        String  // Ortho | Neuro | Sports
   durationMinutes  Int
   standardSessions Int
-  benefits         String  // JSON array stored as string
-  conditions       String  // JSON array stored as string
+  benefits         String[]
+  conditions       String[]
   pricePerSession  Float
 
   machines     TreatmentMachine[]
@@ -103,7 +118,7 @@ model Machine {
   description    String
   imageUrl       String?
   specialty      String
-  certifications String  // JSON array stored as string
+  certifications String[]
   acquiredDate   DateTime
 
   treatments TreatmentMachine[]

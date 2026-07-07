@@ -9,7 +9,7 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-gray-50">
 
       <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-16 animate-slideInUp">

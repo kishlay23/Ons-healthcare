@@ -1,0 +1,24 @@
+User-agent: *
+
+# Public pages — allow indexing
+Allow: /
+Allow: /about
+Allow: /contact
+Allow: /faq
+Allow: /pricing
+Allow: /treatments
+Allow: /machines
+Allow: /stories
+
+# Auth pages — allow (users searching for login page should find it)
+Allow: /login
+Allow: /signup
+
+# Private / admin pages — block from indexing
+Disallow: /admin
+Disallow: /patient
+Disallow: /reset-password
+Disallow: /verify-otp
+Disallow: /forgot-password
+
+Sitemap: https://onshealthcare.in/sitemap.xml

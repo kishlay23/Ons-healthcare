@@ -1,91 +1,100 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface FormData {
-  firstName: string
-  lastName: string
-  email: string
-  phone: string
-  age: string
-  gender: string
-  password: string
-  confirmPassword: string
-  agreeTerms: boolean
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  age: string;
+  gender: string;
+  password: string;
+  confirmPassword: string;
+  agreeTerms: boolean;
 }
 
 export default function SignupPage() {
   const [formData, setFormData] = useState<FormData>({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    age: '',
-    gender: '',
-    password: '',
-    confirmPassword: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    age: "",
+    gender: "",
+    password: "",
+    confirmPassword: "",
     agreeTerms: false,
-  })
-  const [error, setError] = useState('')
-  const [loading, setLoading] = useState(false)
-  const router = useRouter()
+  });
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    const checked = (e.target as HTMLInputElement).checked
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
+    const { name, value } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
     setFormData((prev) => ({
       ...prev,
-      [name]: e.target.type === 'checkbox' ? checked : value,
-    }))
-  }
+      [name]: e.target.type === "checkbox" ? checked : value,
+    }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setError('')
+    e.preventDefault();
+    setError("");
 
     if (formData.password !== formData.confirmPassword) {
-      setError('Passwords do not match')
-      return
+      setError("Passwords do not match");
+      return;
+    }
+    if (formData.password.length < 8) {
+      setError("Password must be at least 8 characters");
+      return;
     }
     if (!formData.agreeTerms) {
-      setError('Please agree to the terms and conditions')
-      return
+      setError("Please agree to the terms and conditions");
+      return;
     }
 
-    setLoading(true)
+    setLoading(true);
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/signup`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          phone: formData.phone,
-          age: parseInt(formData.age),
-          gender: formData.gender,
-          password: formData.password,
-        }),
-      })
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/signup`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email,
+            phone: formData.phone,
+            age: parseInt(formData.age),
+            gender: formData.gender,
+            password: formData.password,
+          }),
+        },
+      );
 
-      const data = await response.json()
+      const data = await response.json();
       if (!response.ok) {
-        setError(data.message || 'Signup failed')
-        return
+        setError(data.message || "Signup failed");
+        return;
       }
 
-      router.push('/login?registered=true')
+      router.push("/login?registered=true");
     } catch {
-      setError('Something went wrong. Please try again.')
+      setError("Something went wrong. Please try again.");
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const inputClass =
-    'w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition'
+    "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition";
 
   return (
     <div className="w-full max-w-2xl">
@@ -95,7 +104,9 @@ export default function SignupPage() {
             O
           </div>
           <h1 className="text-2xl font-bold text-gray-900">Create Account</h1>
-          <p className="text-gray-500 text-sm mt-1">Join ONS Healthcare and book your first appointment</p>
+          <p className="text-gray-500 text-sm mt-1">
+            Join ONS Healthcare and book your first appointment
+          </p>
         </div>
 
         {error && (
@@ -107,34 +118,89 @@ export default function SignupPage() {
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
-              <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} className={inputClass} required />
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                First Name *
+              </label>
+              <input
+                type="text"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                className={inputClass}
+                required
+              />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
-              <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} className={inputClass} required />
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Last Name *
+              </label>
+              <input
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                className={inputClass}
+                required
+              />
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
-            <input type="email" name="email" value={formData.email} onChange={handleChange} className={inputClass} required />
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Email Address *
+            </label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className={inputClass}
+              required
+            />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
-              <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className={inputClass} required />
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Phone Number *
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className={inputClass}
+                required
+              />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Age *</label>
-              <input type="number" name="age" value={formData.age} onChange={handleChange} min="1" max="120" className={inputClass} required />
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Age *
+              </label>
+              <input
+                type="number"
+                name="age"
+                value={formData.age}
+                onChange={handleChange}
+                min="1"
+                max="120"
+                className={inputClass}
+                required
+              />
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Gender *</label>
-            <select name="gender" value={formData.gender} onChange={handleChange} className={inputClass} required>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Gender *
+            </label>
+            <select
+              name="gender"
+              value={formData.gender}
+              onChange={handleChange}
+              className={inputClass}
+              required
+            >
               <option value="">Select gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
@@ -144,22 +210,53 @@ export default function SignupPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Password *</label>
-              <input type="password" name="password" value={formData.password} onChange={handleChange} className={inputClass} required />
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Password *
+              </label>
+              <input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                className={inputClass}
+                required
+              />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Confirm Password *</label>
-              <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} className={inputClass} required />
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Confirm Password *
+              </label>
+              <input
+                type="password"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                className={inputClass}
+                required
+              />
             </div>
           </div>
 
           <label className="flex items-start gap-2 text-sm text-gray-600">
-            <input type="checkbox" name="agreeTerms" checked={formData.agreeTerms} onChange={handleChange} className="mt-0.5" />
+            <input
+              type="checkbox"
+              name="agreeTerms"
+              checked={formData.agreeTerms}
+              onChange={handleChange}
+              className="mt-0.5"
+            />
             <span>
-              I agree to the{' '}
-              <Link href="/terms" className="text-red-700 hover:underline">terms and conditions</Link>
-              {' '}and{' '}
-              <Link href="/privacy-policy" className="text-red-700 hover:underline">privacy policy</Link>
+              I agree to the{" "}
+              <Link href="/terms" className="text-red-700 hover:underline">
+                terms and conditions
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/privacy-policy"
+                className="text-red-700 hover:underline"
+              >
+                privacy policy
+              </Link>
             </span>
           </label>
 
@@ -168,17 +265,20 @@ export default function SignupPage() {
             disabled={loading}
             className="w-full py-3 bg-red-700 text-white rounded-lg font-semibold hover:bg-red-800 transition disabled:opacity-60"
           >
-            {loading ? 'Creating Account...' : 'Create Account'}
+            {loading ? "Creating Account..." : "Create Account"}
           </button>
         </form>
 
         <p className="text-center text-sm text-gray-600 mt-6">
-          Already have an account?{' '}
-          <Link href="/login" className="text-red-700 font-semibold hover:underline">
+          Already have an account?{" "}
+          <Link
+            href="/login"
+            className="text-red-700 font-semibold hover:underline"
+          >
             Login here
           </Link>
         </p>
       </div>
     </div>
-  )
+  );
 }

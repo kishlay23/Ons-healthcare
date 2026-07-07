@@ -1,45 +1,48 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import { useAuth } from '@/lib/hooks/useAuth'
+import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/lib/hooks/useAuth";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
-  const [loading, setLoading] = useState(false)
-  const router = useRouter()
-  const { login } = useAuth()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const { login } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setError('')
-    setLoading(true)
+    e.preventDefault();
+    setError("");
+    setLoading(true);
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      })
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        },
+      );
 
-      const data = await response.json()
+      const data = await response.json();
 
       if (!response.ok) {
-        setError(data.message || 'Login failed')
-        return
+        setError(data.message || "Login failed");
+        return;
       }
 
-      login(data.user, data.token)
-      router.push(data.user.role === 'admin' ? '/admin' : '/patient/dashboard')
+      login(data.user, data.token, data.refreshToken);
+      router.push(data.user.role === "ADMIN" ? "/admin" : "/patient/dashboard");
     } catch {
-      setError('Something went wrong. Please try again.')
+      setError("Something went wrong. Please try again.");
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <div className="w-full max-w-md">
@@ -49,7 +52,9 @@ export default function LoginPage() {
             O
           </div>
           <h1 className="text-2xl font-bold text-gray-900">Welcome Back</h1>
-          <p className="text-gray-500 text-sm mt-1">Login to your ONS Healthcare account</p>
+          <p className="text-gray-500 text-sm mt-1">
+            Login to your ONS Healthcare account
+          </p>
         </div>
 
         {error && (
@@ -60,7 +65,9 @@ export default function LoginPage() {
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Email Address
+            </label>
             <input
               type="email"
               value={email}
@@ -72,7 +79,9 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Password
+            </label>
             <input
               type="password"
               value={password}
@@ -88,7 +97,10 @@ export default function LoginPage() {
               <input type="checkbox" className="rounded" />
               Remember me
             </label>
-            <Link href="/forgot-password" className="text-sm text-red-700 hover:underline">
+            <Link
+              href="/forgot-password"
+              className="text-sm text-red-700 hover:underline"
+            >
               Forgot password?
             </Link>
           </div>
@@ -98,17 +110,20 @@ export default function LoginPage() {
             disabled={loading}
             className="w-full py-3 bg-red-700 text-white rounded-lg font-semibold hover:bg-red-800 transition disabled:opacity-60"
           >
-            {loading ? 'Logging in...' : 'Login'}
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
 
         <p className="text-center text-sm text-gray-600 mt-6">
-          Don&apos;t have an account?{' '}
-          <Link href="/signup" className="text-red-700 font-semibold hover:underline">
+          Don&apos;t have an account?{" "}
+          <Link
+            href="/signup"
+            className="text-red-700 font-semibold hover:underline"
+          >
             Sign up here
           </Link>
         </p>
       </div>
     </div>
-  )
+  );
 }

@@ -10,7 +10,7 @@ async function start() {
 
   const server = app.listen(PORT, () => {
     logger.info(`🚀 ONS Healthcare API → http://localhost:${PORT}`)
-    logger.info(`   DB: SQLite (prisma/dev.db)`)
+    logger.info(`   DB: PostgreSQL (Neon)`)
     logger.info(`   Health: http://localhost:${PORT}/health`)
   })
 
