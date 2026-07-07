@@ -67,10 +67,10 @@ export default function Header() {
           {user ? (
             <>
               <Link
-                href={user.role === 'admin' ? '/admin' : '/patient/dashboard'}
+                href={user.role === 'ADMIN' ? '/admin' : '/patient/dashboard'}
                 className="px-4 py-2 text-purple-300 border border-purple-500/40 rounded-lg hover:bg-purple-500/10 transition font-medium text-sm"
               >
-                {user.role === 'admin' ? 'Admin' : 'Dashboard'}
+                {user.role === 'ADMIN' ? 'Admin' : 'Dashboard'}
               </Link>
               <button
                 onClick={handleLogout}
@@ -127,10 +127,10 @@ export default function Header() {
             <div className="flex flex-col gap-2 pt-3 border-t border-purple-500/20">
               {user ? (
                 <>
-                  <Link href={user.role === 'admin' ? '/admin' : '/patient/dashboard'}
+                  <Link href={user.role === 'ADMIN' ? '/admin' : '/patient/dashboard'}
                     className="px-4 py-2 text-center text-purple-300 border border-purple-500/40 rounded-lg"
                     onClick={() => setIsOpen(false)}>
-                    {user.role === 'admin' ? 'Admin' : 'Dashboard'}
+                    {user.role === 'ADMIN' ? 'Admin' : 'Dashboard'}
                   </Link>
                   <button onClick={() => { handleLogout(); setIsOpen(false) }}
                     className="px-4 py-2 bg-purple-600 text-white rounded-lg">
